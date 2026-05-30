@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | ACE Martial Arts & Wellness</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ── Contact Form ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact-info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background: var(--clr-dark-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      transition: border-color var(--transition);
+    }
+
+    .contact-info-card:hover {
+      border-color: rgba(220,30,30,0.35);
+    }
+
+    .contact-info-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(220,30,30,0.12);
+      border: 1px solid rgba(220,30,30,0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: var(--clr-red-light);
+      flex-shrink: 0;
+    }
+
+    .contact-info-text h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      color: var(--clr-white);
+      margin-bottom: 5px;
+    }
+
+    .contact-info-text p,
+    .contact-info-text a {
+      font-size: 0.9rem;
+      color: #888;
+      line-height: 1.65;
+      transition: color var(--transition);
+    }
+
+    .contact-info-text a:hover {
+      color: var(--clr-red-light);
+    }
+
+    /* ── Form ── */
+    .contact-form-wrapper {
+      background: var(--clr-dark-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-lg);
+      padding: 44px 40px;
+    }
+
+    .contact-form-wrapper h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.05em;
+      color: var(--clr-white);
+      margin-bottom: 6px;
+    }
+
+    .contact-form-wrapper p.form-sub {
+      font-size: 0.875rem;
+      color: #888;
+      margin-bottom: 28px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 13px 16px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--clr-white);
+      outline: none;
+      transition: border-color var(--transition), background var(--transition);
+      width: 100%;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #555;
+    }
+
+    .form-group select option {
+      background: var(--clr-dark);
+      color: var(--clr-white);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--clr-red);
+      background: rgba(220,30,30,0.05);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 15px;
+      font-size: 1rem;
+      margin-top: 8px;
+      border-radius: var(--radius);
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 24px;
+      background: rgba(37,211,102,0.08);
+      border: 1px solid rgba(37,211,102,0.25);
+      border-radius: var(--radius);
+      margin-top: 16px;
+    }
+
+    .form-success i {
+      font-size: 2rem;
+      color: #25d366;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .form-success p {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* ── Map ── */
+    .map-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+      height: 420px;
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ── Social strip ── */
+    .social-strip {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .social-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--clr-dark-card);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      padding: 18px 24px;
+      flex: 1;
+      min-width: 200px;
+      transition: border-color var(--transition), transform var(--transition);
+      text-decoration: none;
+    }
+
+    .social-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(220,30,30,0.4);
+    }
+
+    .social-card i {
+      font-size: 1.6rem;
+    }
+
+    .social-card .social-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 2px;
+    }
+
+    .social-card .social-handle {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--clr-white);
+    }
+
+    .social-card.instagram i { color: #e1306c; }
+    .social-card.whatsapp i  { color: #25d366; }
+    .social-card.email i     { color: var(--clr-gold); }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.jpeg" alt="ACE Martial Arts & Wellness" class="nav-logo-img" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="classes.html" class="nav-link">Classes</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        <li><a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="nav-cta">Join Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" style="min-height: 52vh;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-badge">Get in Touch &nbsp;·&nbsp; We'd Love to Hear from You</p>
+      <h1 class="hero-title">Let's Start Your<br /><span class="hero-title-accent">Journey Together.</span></h1>
+      <p class="hero-tagline">Have a question? Want to join? We're just a message away.</p>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT — Info cards -->
+        <div class="contact-info">
+          <div>
+            <span class="section-tag">Reach Us</span>
+            <h2 class="section-title" style="margin-top: 12px;">We're Here<br /><span class="highlight">For You.</span></h2>
+            <p class="section-body" style="margin-top: 12px;">
+              Whether you're curious about our classes, want to book a free trial, or just want
+              to say hello — we'd love to hear from you. Reach out through any of the channels
+              below and we'll get back to you warmly and promptly.
+            </p>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-info-text">
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/91XXXXXXXXXX" target="_blank">+91 XXXXX XXXXX</a>
+              <p style="margin-top: 4px; font-size: 0.8rem;">Fastest way to reach us — book a trial, ask anything.</p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-info-text">
+              <h4>Email</h4>
+              <a href="mailto:acemartialarts01@gmail.com">acemartialarts01@gmail.com</a>
+              <p style="margin-top: 4px; font-size: 0.8rem;">We respond to all emails within 24 hours.</p>
+            </div>
+          </div>
+
+          <!-- Instagram -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fab fa-instagram"></i></div>
+            <div class="contact-info-text">
+              <h4>Instagram</h4>
+              <a href="https://www.instagram.com/acemartialarts.blr?igsh=amNobGxqYWN5dm1l" target="_blank">@acemartialarts.blr</a>
+              <p style="margin-top: 4px; font-size: 0.8rem;">Follow us for updates, highlights and community moments.</p>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fas fa-location-dot"></i></div>
+            <div class="contact-info-text">
+              <h4>Location</h4>
+              <p>Near Abbigere Lakeside, Bangalore</p>
+              <a href="https://maps.app.goo.gl/TdjcmNZo2voVR5aG9?g_st=aw" target="_blank" style="margin-top: 6px; display: inline-block; font-size: 0.82rem; color: var(--clr-red-light);">
+                <i class="fas fa-map-pin" style="margin-right: 4px;"></i>Open in Google Maps
+              </a>
+            </div>
+          </div>
+
+          <!-- Response hours -->
+          <div class="contact-info-card">
+            <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-info-text">
+              <h4>Response Hours</h4>
+              <p>Monday – Saturday &nbsp;·&nbsp; 9:00 AM – 5:00 PM</p>
+              <p style="margin-top: 4px; font-size: 0.8rem;">We'll get back to you as soon as possible within these hours.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT — Contact form -->
+        <div class="contact-form-wrapper">
+          <h3>Send Us a Message</h3>
+          <p class="form-sub">Fill in the form below and we'll get back to you shortly. We'd love to welcome you to the ACE family!</p>
+
+          <!-- Formspree form — replace YOUR_FORM_ID with your Formspree ID -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="heard">How did you hear about us?</label>
+              <select id="heard" name="heard_from">
+                <option value="" disabled selected>Select an option</option>
+                <option value="instagram">Instagram</option>
+                <option value="whatsapp">WhatsApp</option>
+                <option value="friend">Friend / Family</option>
+                <option value="google">Google</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="Tell us what you'd like to know — class timings, trial session, anything at all..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">
+              <i class="fas fa-paper-plane"></i>&nbsp; Send Message
+            </button>
+
+          </form>
+
+          <!-- Success message shown after submit -->
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-circle-check"></i>
+            <p><strong style="color: var(--clr-white);">Message sent!</strong><br />Thank you for reaching out. We'll get back to you within 24 hours.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GOOGLE MAP ========== -->
+  <section class="why-us section dark-section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag light">Find Us</span>
+        <h2 class="section-title light">We're at <span class="highlight">Abbigere Lakeside</span></h2>
+        <p class="section-subtitle light">Come visit us — we'd love to show you around the dojo.</p>
+      </div>
+      <div class="map-wrapper">
+        <iframe
+          src="https://maps.google.com/maps?q=Abbigere+Lakeside+Bangalore&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="ACE Martial Arts & Wellness Location">
+        </iframe>
+      </div>
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="https://maps.app.goo.gl/TdjcmNZo2voVR5aG9?g_st=aw" target="_blank" class="btn btn-outline" style="display: inline-flex;">
+          <i class="fas fa-map-pin"></i>&nbsp; Open in Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOCIAL STRIP ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Stay Connected</span>
+        <h2 class="section-title">Follow the <span class="highlight">ACE Community</span></h2>
+        <p class="section-subtitle">Stay updated with training highlights, belt promotions, and community moments.</p>
+      </div>
+
+      <div class="social-strip">
+
+        <a href="https://www.instagram.com/acemartialarts.blr?igsh=amNobGxqYWN5dm1l" target="_blank" class="social-card instagram">
+          <i class="fab fa-instagram"></i>
+          <div>
+            <p class="social-label">Instagram</p>
+            <p class="social-handle">@acemartialarts.blr</p>
+          </div>
+        </a>
+
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="social-card whatsapp">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <p class="social-label">WhatsApp</p>
+            <p class="social-handle">Chat with us</p>
+          </div>
+        </a>
+
+        <a href="mailto:acemartialarts01@gmail.com" class="social-card email">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <p class="social-label">Email</p>
+            <p class="social-handle">acemartialarts01@gmail.com</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <span class="section-tag light">First Step is the Hardest</span>
+      <h2>Ready to Join the ACE Family?</h2>
+      <p>Book your free one-week trial today — no experience needed,<br />no equipment required. Just show up.</p>
+      <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i>&nbsp; Book Free Trial via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.jpeg" alt="ACE Martial Arts & Wellness" class="footer-logo-img" />
+        </a>
+        <p>Discipline. Strength. Balance.<br />Building champions on and off the mat.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/acemartialarts.blr?igsh=amNobGxqYWN5dm1l" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="classes.html">Taekwondo</a></li>
+          <li><a href="classes.html">Self Defense</a></li>
+          <li><a href="classes.html">Wellness Training</a></li>
+          <li><a href="classes.html">Kids Batch</a></li>
+          <li><a href="classes.html">Adults Batch</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <i class="fab fa-instagram"></i>
+          <a href="https://www.instagram.com/acemartialarts.blr?igsh=amNobGxqYWN5dm1l" target="_blank">@acemartialarts.blr</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank">+91 XXXXX XXXXX</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:acemartialarts01@gmail.com">acemartialarts01@gmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-location-dot"></i>
+          <p>Near Abbigere Lakeside,<br />Bangalore</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ACE Martial Arts &amp; Wellness. All rights reserved.</p>
+      <p>Built with &hearts; for champions</p>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING WHATSAPP ========== -->
+  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+
+  <!-- ========== FORM SUCCESS SCRIPT ========== -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+          }
+        } catch (err) {
+          console.error('Form submission error:', err);
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

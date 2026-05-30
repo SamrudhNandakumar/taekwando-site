@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classes & Schedule | ACE Martial Arts & Wellness</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ── Belt colours ── */
+    .belt-white      { background: #ffffff; border: 1px solid rgba(255,255,255,0.25); }
+    .belt-yellow     { background: #FFD700; }
+    .belt-yg         { background: linear-gradient(90deg,#FFD700 50%,#2e8028 50%); }
+    .belt-green      { background: #2e8028; }
+    .belt-gb         { background: linear-gradient(90deg,#2e8028 50%,#12519e 50%); }
+    .belt-blue       { background: #12519e; }
+    .belt-br         { background: linear-gradient(90deg,#12519e 50%,#E53935 50%); }
+    .belt-red        { background: #E53935; }
+    .belt-rb         { background: linear-gradient(90deg,#E53935 50%,#111111 50%); border: 1px solid rgba(255,255,255,0.15); }
+    .belt-black      { background: #111111; border: 2px solid var(--clr-gold); box-shadow: 0 0 12px rgba(240,165,0,0.4); }
+
+    /* ── Accordion FAQ ── */
+    .faq-item {
+      background: var(--clr-dark-card);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+    .faq-item.open {
+      border-color: rgba(220,30,30,0.4);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px 28px;
+      text-align: left;
+    }
+    .faq-question-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--clr-white);
+    }
+    .faq-question-text i {
+      color: var(--clr-red-light);
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+    .faq-chevron {
+      color: var(--clr-muted);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+      color: var(--clr-red-light);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 28px;
+    }
+    .faq-answer p {
+      font-size: 0.9rem;
+      color: #888;
+      line-height: 1.8;
+      padding-bottom: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 16px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.jpeg" alt="ACE Martial Arts & Wellness" class="nav-logo-img" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="classes.html" class="nav-link active">Classes</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="nav-cta">Join Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" style="min-height: 60vh;">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-badge">Classes &nbsp;·&nbsp; Schedule &nbsp;·&nbsp; Belt System</p>
+      <h1 class="hero-title">Train Smart.<br /><span class="hero-title-accent">Train Hard.</span></h1>
+      <p class="hero-tagline">One batch. All ages. Every discipline.<br />Find your place on the mat.</p>
+    </div>
+  </section>
+
+  <!-- ========== CLASS SCHEDULE ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Weekly Schedule</span>
+        <h2 class="section-title">Class <span class="highlight">Timings</span></h2>
+        <p class="section-subtitle">One batch that covers all disciplines — join any session and train with the full community.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px;">
+
+        <!-- Wednesday -->
+        <div class="pricing-card" style="text-align: center; padding: 40px 28px;">
+          <div class="feature-icon" style="margin: 0 auto 20px;">
+            <i class="fas fa-calendar-day"></i>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 0.06em; color: var(--clr-white); margin-bottom: 6px;">Wednesday</h3>
+          <p style="color: var(--clr-gold); font-size: 1.5rem; font-family: var(--font-display); letter-spacing: 0.05em; margin-bottom: 12px;">6:30 PM – 8:30 PM</p>
+          <p style="color: #888; font-size: 0.875rem;">2 hours &nbsp;·&nbsp; All disciplines &nbsp;·&nbsp; All age groups</p>
+        </div>
+
+        <!-- Friday -->
+        <div class="pricing-card" style="text-align: center; padding: 40px 28px;">
+          <div class="feature-icon" style="margin: 0 auto 20px;">
+            <i class="fas fa-calendar-day"></i>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 0.06em; color: var(--clr-white); margin-bottom: 6px;">Friday</h3>
+          <p style="color: var(--clr-gold); font-size: 1.5rem; font-family: var(--font-display); letter-spacing: 0.05em; margin-bottom: 12px;">6:30 PM – 8:30 PM</p>
+          <p style="color: #888; font-size: 0.875rem;">2 hours &nbsp;·&nbsp; All disciplines &nbsp;·&nbsp; All age groups</p>
+        </div>
+
+        <!-- Sunday -->
+        <div class="pricing-card" style="text-align: center; padding: 40px 28px;">
+          <div class="feature-icon" style="margin: 0 auto 20px;">
+            <i class="fas fa-calendar-day"></i>
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 0.06em; color: var(--clr-white); margin-bottom: 6px;">Sunday</h3>
+          <p style="color: var(--clr-gold); font-size: 1.5rem; font-family: var(--font-display); letter-spacing: 0.05em; margin-bottom: 12px;">7:00 AM – 9:00 AM</p>
+          <p style="color: #888; font-size: 0.875rem;">2 hours &nbsp;·&nbsp; All disciplines &nbsp;·&nbsp; All age groups</p>
+        </div>
+
+      </div>
+
+      <!-- Note -->
+      <div class="feature-card" style="text-align: center; padding: 24px 28px; border-color: rgba(240,165,0,0.25);">
+        <p style="color: #aaa; font-size: 0.92rem; line-height: 1.8;">
+          <i class="fas fa-circle-info" style="color: var(--clr-gold); margin-right: 8px;"></i>
+          All three sessions cover every discipline. You are welcome to attend any or all sessions each week.
+          Students of all skill levels and age groups train together in a collaborative, wholesome environment.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== BELT PROGRESSION ========== -->
+  <section class="why-us section dark-section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag light">Taekwondo Journey</span>
+        <h2 class="section-title light">Belt <span class="highlight">Progression</span></h2>
+        <p class="section-subtitle light">Your journey from White Belt to Black Belt — every step earned through dedication and hard work.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px; max-width: 720px; margin: 0 auto 48px;">
+
+        <!-- White -->
+        <div class="feature-card" style="display: flex; align-items: center; gap: 20px; padding: 20px 28px;">
+          <div class="belt-white" style="width: 52px; height: 20px; border-radius: 50px; flex-shrink: 0;"></div>
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 2px;">White Belt</h4>
+            <p style="font-size: 0.82rem; color: #888;">The beginning of your journey. Open mind, fresh start.</p>
+          </div>
+          <span style="margin-left: auto; font-size: 0.72rem; color: var(--clr-gold); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;">Beginner</span>
+        </div>
+
+        <!-- Yellow -->
+        <div class="feature-card" style="display: flex; align-items: center; gap: 20px; padding: 20px 28px;">
+          <div class="belt-yellow" style="width: 52px; height: 20px; border-radius: 50px; flex-shrink: 0;"></div>
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 2px;">Yellow Belt</h4>
+            <p style="font-size: 0.82rem; color: #888;">Basic stances, blocks, and fundamental kicks mastered.</p>
+          </div>
+          <span style="margin-left: auto; font-size: 0.72rem; color: var(--clr-gold); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;">Beginner</span>
+        </div>
+
+        <!-- Yellow-Green -->
+        <div class="feature-card" style="display: flex; align-items: center; gap: 20px; padding: 20px 28px;">
+          <div class="belt-yg" style="width: 52px; height: 20px; border-radius: 50px; flex-shrink: 0;"></div>
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 2px;">Yellow-Green Belt</h4>
+            <p style="font-size: 0.82rem; color: #888;">Transitioning into more complex techniques and combinations.</p>
+          </div>
+          <span style="margin-left: auto; font-size: 0.72rem; color: var(--clr-gold); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;">Elementary</span>
+        </div>
+
+        <!-- Green -->
+        <div class="feature-card" style="display: flex; align-items: center; gap: 20px; padding: 20px 28px;">
+          <div class="belt-green" style="width: 52px; height: 20px; border-radius: 50px; flex-shrink: 0;"></div>
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 2px;">Green Belt</h4>
+            <p style="font-size: 0.82rem; color: #888;">Developing strength and technical skill. Growth is visible.</p>
+          </div>
+          <span style="margin-left: auto; font-size: 0.72rem; color: var(--clr-gold); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;">Intermediate</span>
+        </div>
+
+        <!-- Green-Blue -->
+        <div class="feature-card" style="display: flex; align-items: center; gap: 20px; padding: 20px 28px;">
+          <div class="belt-gb" style="width: 52px; height: 20px; border-radius: 50px; flex-shrink: 0;"></div>
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 2px;">Green-Blue Belt</h4>
+            <p style="font-size: 0.82rem; color: #888;">Refining techniques and building competitive awareness.</p>
+          </div>
+          <span style="margin-left: auto; font-size: 0.72rem; color: var(--clr-gold); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;">Intermediate</span>
+        </div>
+
+        <!-- Blue -->
+        <div class="feature-card" style="display: flex; align-items: center; gap: 20px; padding: 20px 28px;">
+          <div class="belt-blue" style="width: 52px; height: 20px; border-radius: 50px; flex-shrink: 0;"></div>
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 2px;">Blue Belt</h4>
+            <p style="font-size: 0.82rem; color: #888;">Advanced techniques, sparring, and deeper pattern work.</p>
+          </div>
+          <span style="margin-left: auto; font-size: 0.72rem; color: var(--clr-gold); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;">Advanced</span>
+        </div>
+
+        <!-- Blue-Red -->
+        <div class="feature-card" style="display: flex; align-items: center; gap: 20px; padding: 20px 28px;">
+          <div class="belt-br" style="width: 52px; height: 20px; border-radius: 50px; flex-shrink: 0;"></div>
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 2px;">Blue-Red Belt</h4>
+            <p style="font-size: 0.82rem; color: #888;">Sharpening precision and preparing for the final coloured belt.</p>
+          </div>
+          <span style="margin-left: auto; font-size: 0.72rem; color: var(--clr-gold); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;">Advanced</span>
+        </div>
+
+        <!-- Red -->
+        <div class="feature-card" style="display: flex; align-items: center; gap: 20px; padding: 20px 28px;">
+          <div class="belt-red" style="width: 52px; height: 20px; border-radius: 50px; flex-shrink: 0;"></div>
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 2px;">Red Belt</h4>
+            <p style="font-size: 0.82rem; color: #888;">Danger and control. The final step before black belt candidacy.</p>
+          </div>
+          <span style="margin-left: auto; font-size: 0.72rem; color: var(--clr-gold); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;">Pre-Black</span>
+        </div>
+
+        <!-- Red-Black -->
+        <div class="feature-card" style="display: flex; align-items: center; gap: 20px; padding: 20px 28px;">
+          <div class="belt-rb" style="width: 52px; height: 20px; border-radius: 50px; flex-shrink: 0;"></div>
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 2px;">Red-Black Belt</h4>
+            <p style="font-size: 0.82rem; color: #888;">Mastery is near. Preparing mind and body for the ultimate test.</p>
+          </div>
+          <span style="margin-left: auto; font-size: 0.72rem; color: var(--clr-gold); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;">Pre-Black</span>
+        </div>
+
+        <!-- Black Belt -->
+        <div class="feature-card" style="display: flex; align-items: center; gap: 20px; padding: 20px 28px; border-color: var(--clr-gold); background: linear-gradient(145deg,#1a1200,#1a1a1a);">
+          <div class="belt-black" style="width: 52px; height: 20px; border-radius: 50px; flex-shrink: 0;"></div>
+          <div>
+            <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-gold); margin-bottom: 2px;">Black Belt — 1st Dan &amp; Beyond</h4>
+            <p style="font-size: 0.82rem; color: #888;">The beginning of mastery. 1st Dan through 6th Dan — a lifelong pursuit of excellence.</p>
+          </div>
+          <span style="margin-left: auto; font-size: 0.72rem; color: var(--clr-gold); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;">Master</span>
+        </div>
+
+      </div>
+
+      <!-- Grading info -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 720px; margin: 0 auto;">
+        <div class="feature-card" style="text-align: center; padding: 28px 24px;">
+          <div class="feature-icon" style="margin: 0 auto 14px;"><i class="fas fa-calendar-check"></i></div>
+          <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 8px;">Belt Tests</h4>
+          <p style="font-size: 0.875rem; color: #888; line-height: 1.7;">Coloured belt grading exams conducted once every <span style="color: var(--clr-white); font-weight: 600;">3 months.</span> A grading fee applies — contact us for details.</p>
+        </div>
+        <div class="feature-card" style="text-align: center; padding: 28px 24px;">
+          <div class="feature-icon" style="margin: 0 auto 14px;"><i class="fas fa-hourglass-half"></i></div>
+          <h4 style="font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.05em; color: var(--clr-white); margin-bottom: 8px;">Time to Black Belt</h4>
+          <p style="font-size: 0.875rem; color: #888; line-height: 1.7;">Dedication determines progress. On average, students reach <span style="color: var(--clr-white); font-weight: 600;">1st Dan in 3–5 years.</span></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== FEES ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">Membership</span>
+        <h2 class="section-title">Simple, <span class="highlight">Transparent</span> Pricing</h2>
+        <p class="section-subtitle">One plan. All disciplines. No hidden charges.</p>
+      </div>
+      <div class="pricing-card-wrapper">
+        <div class="pricing-card">
+          <div class="pricing-badge">All Inclusive</div>
+          <div class="pricing-top">
+            <div class="pricing-title-block">
+              <h3>ACE Complete Program</h3>
+              <p>One membership. Every discipline. Total transformation.</p>
+            </div>
+            <div class="pricing-price-block">
+              <div class="price-row">
+                <span class="price-label">Advance (one-time)</span>
+                <span class="price-amount">&#8377;&nbsp;1,000</span>
+              </div>
+              <div class="price-divider"></div>
+              <div class="price-row">
+                <span class="price-label">Monthly Fee</span>
+                <span class="price-amount">&#8377;&nbsp;1,000<span class="price-per">/month</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="pricing-features">
+            <div class="pf-col">
+              <h4><i class="fas fa-khanda"></i> Taekwondo</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Belt grading system</li>
+                <li><i class="fas fa-check"></i> Competition training</li>
+                <li><i class="fas fa-check"></i> All age groups</li>
+              </ul>
+            </div>
+            <div class="pf-col">
+              <h4><i class="fas fa-shield-halved"></i> Self Defense</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Aiki-Jujutsu techniques</li>
+                <li><i class="fas fa-check"></i> Real-world scenarios</li>
+                <li><i class="fas fa-check"></i> All fitness levels</li>
+              </ul>
+            </div>
+            <div class="pf-col">
+              <h4><i class="fas fa-dumbbell"></i> Fitness</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Indoor &amp; outdoor workouts</li>
+                <li><i class="fas fa-check"></i> Flexibility &amp; mobility</li>
+                <li><i class="fas fa-check"></i> Strength conditioning</li>
+              </ul>
+            </div>
+          </div>
+          <div class="pricing-action">
+            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn btn-whatsapp">
+              <i class="fab fa-whatsapp"></i>&nbsp; Enroll via WhatsApp
+            </a>
+            <p class="pricing-note">No hidden charges &nbsp;·&nbsp; Pay monthly &nbsp;·&nbsp; Cancel anytime</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHAT TO EXPECT ========== -->
+  <section class="why-us section dark-section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag light">First Time?</span>
+        <h2 class="section-title light">What to <span class="highlight">Expect</span></h2>
+        <p class="section-subtitle light">Everything you need to know before stepping onto the mat for the first time.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-shirt"></i></div>
+          <h3>What to Wear</h3>
+          <p>Come in comfortable sportswear — track pants and a sports t-shirt work perfectly. No special uniform is required when starting out.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-bottle-water"></i></div>
+          <h3>What to Bring</h3>
+          <p>Just bring a water bottle and your dedication. No equipment or gear is required — we take care of everything else.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-people-group"></i></div>
+          <h3>The Environment</h3>
+          <p>A collaborative, wholesome space where kids, teenagers, and adults train side by side — learning from each other as much as from the instructors.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon"><i class="fas fa-calendar-week"></i></div>
+          <h3>Free Trial Week</h3>
+          <p>Not sure yet? We offer a one-week free trial so you can experience ACE firsthand before committing. No pressure, just pure training.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ (ACCORDION) ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header center">
+        <span class="section-tag">FAQs</span>
+        <h2 class="section-title">Frequently Asked <span class="highlight">Questions</span></h2>
+        <p class="section-subtitle">Click any question to reveal the answer.</p>
+      </div>
+
+      <div style="max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;">
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text"><i class="fas fa-circle-question"></i> Do I need prior experience to join?</span>
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Not at all. ACE welcomes complete beginners. Our instructors are experienced in guiding students from zero — all you need to bring is willingness to learn.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text"><i class="fas fa-circle-question"></i> Is there an age limit?</span>
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>There is no age limit at ACE. We have students as young as 6 and as experienced as 50+ — all training together in one collaborative batch.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text"><i class="fas fa-circle-question"></i> Do you offer trial classes?</span>
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! We offer a free one-week trial for all new students. Come experience the ACE environment firsthand before making any commitment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text"><i class="fas fa-circle-question"></i> What should I wear for my first class?</span>
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Comfortable sportswear — a t-shirt and track pants work perfectly. Bring a water bottle. No special uniform or equipment is needed when starting out.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text"><i class="fas fa-circle-question"></i> What equipment do I need to buy?</span>
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>No equipment is required to get started. As you progress, our instructors will guide you on any gear you may need at the appropriate stage of your training.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text"><i class="fas fa-circle-question"></i> How do belt gradings work?</span>
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Belt tests for coloured belts are conducted once every 3 months. Students are assessed by our certified instructors. A grading fee applies — contact us for details. Black belt grading follows a separate advanced process.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text"><i class="fas fa-circle-question"></i> How long does it take to get a black belt?</span>
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>It depends entirely on the student's dedication and consistency. On average, students at ACE reach 1st Dan Black Belt in 3 to 5 years of committed training.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text"><i class="fas fa-circle-question"></i> Are there separate batches for different skill levels?</span>
+            <i class="fas fa-chevron-down faq-chevron"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Everyone trains together in one batch — that's part of what makes ACE special. We have 4 certified Black Belt Dan 1 instructors, each personally guiding a dedicated group of students, ensuring everyone gets focused attention they deserve.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <span class="section-tag light">Take the First Step</span>
+      <h2>Ready to Start Your Journey?</h2>
+      <p>Book your free one-week trial today — no experience needed, no equipment required.<br />Just show up and we'll take care of the rest.</p>
+      <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i>&nbsp; Book Free Trial via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.jpeg" alt="ACE Martial Arts & Wellness" class="footer-logo-img" />
+        </a>
+        <p>Discipline. Strength. Balance.<br />Building champions on and off the mat.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/YOUR_HANDLE" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="classes.html">Taekwondo</a></li>
+          <li><a href="classes.html">Self Defense</a></li>
+          <li><a href="classes.html">Wellness Training</a></li>
+          <li><a href="classes.html">Kids Batch</a></li>
+          <li><a href="classes.html">Adults Batch</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <i class="fab fa-instagram"></i>
+          <a href="https://instagram.com/YOUR_HANDLE" target="_blank">@YOUR_HANDLE</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/91XXXXXXXXXX" target="_blank">+91 XXXXX XXXXX</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-location-dot"></i>
+          <p>Near Abbigere Lakeside,<br />Bangalore</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ACE Martial Arts &amp; Wellness. All rights reserved.</p>
+      <p>Built with &hearts; for champions</p>
+    </div>
+  </footer>
+
+  <!-- ========== FLOATING WHATSAPP ========== -->
+  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+
+  <!-- ========== FAQ ACCORDION SCRIPT ========== -->
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        // Open clicked if it wasn't already open
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
