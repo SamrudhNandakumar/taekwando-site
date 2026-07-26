@@ -1,0 +1,433 @@
+/* ============================================================
+   MOBILE COMPACTNESS FIXES
+   Reduces padding, font sizes, and spacing on mobile
+   to avoid excessive scrolling and improve readability
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  /* ── 1. Section padding reduced from 96px to 40px ── */
+  .section {
+    padding: 40px 0;
+  }
+
+  /* ── 2. Container side padding ── */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* ── 3. Section header spacing ── */
+  .section-header.center {
+    margin-bottom: 28px;
+  }
+
+  /* ── 4. Section title font size ── */
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+
+  /* ── 5. Section subtitle ── */
+  .section-subtitle {
+    font-size: 0.875rem;
+  }
+
+  /* ── 6. Section tag badge ── */
+  .section-tag {
+    font-size: 0.68rem;
+    padding: 4px 10px;
+    margin-bottom: 8px;
+  }
+
+  /* ── 7. Feature cards — tighter padding ── */
+  .feature-card {
+    padding: 18px 16px;
+    border-radius: 10px;
+  }
+
+  .feature-card h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .feature-card p {
+    font-size: 0.82rem;
+    line-height: 1.55;
+  }
+
+  /* ── 8. Feature icon smaller ── */
+  .feature-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    border-radius: 10px;
+  }
+
+  /* ── 9. Features grid gap ── */
+  .features-grid {
+    gap: 12px;
+  }
+
+  /* ── 10. Hero section — less tall ── */
+  .hero {
+    min-height: 85vh;
+    padding: 0 16px;
+  }
+
+  .hero-content {
+    padding-top: calc(var(--nav-h) + 10px);
+  }
+
+  .hero-badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 5px 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero-tagline {
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    padding: 12px 24px;
+    font-size: 0.875rem;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* ── 11. Stats strip ── */
+  .stats-strip {
+    padding: 20px 16px;
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
+  }
+
+  .stat-label {
+    font-size: 0.68rem;
+  }
+
+  .stats-container {
+    gap: 14px;
+  }
+
+  /* ── 12. Intro section ── */
+  .intro-grid {
+    gap: 24px;
+  }
+
+  .intro-img-wrapper {
+    aspect-ratio: 3/2;
+  }
+
+  .section-body {
+    font-size: 0.875rem;
+    margin-bottom: 12px;
+  }
+
+  /* ── 13. Pricing card ── */
+  .pricing-card {
+    padding: 24px 18px;
+    border-radius: 12px;
+  }
+
+  .pricing-title-block h3 {
+    font-size: 1.3rem;
+  }
+
+  .pricing-title-block p {
+    font-size: 0.8rem;
+  }
+
+  .price-amount {
+    font-size: 1.6rem;
+  }
+
+  .pricing-features {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .pf-col h4 {
+    font-size: 0.78rem;
+    margin-bottom: 10px;
+  }
+
+  .pf-col ul li {
+    font-size: 0.8rem;
+    gap: 7px;
+  }
+
+  .pricing-action {
+    padding-top: 20px;
+    gap: 10px;
+  }
+
+  .pricing-note {
+    font-size: 0.72rem;
+  }
+
+  /* ── 14. Buttons ── */
+  .btn {
+    padding: 11px 22px;
+    font-size: 0.85rem;
+  }
+
+  .btn-whatsapp {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+
+  /* ── 15. CTA section ── */
+  .cta-section {
+    padding: 60px 16px;
+  }
+
+  .cta-content {
+    gap: 12px;
+  }
+
+  .cta-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .cta-content p {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  /* ── 16. Footer ── */
+  .footer-container {
+    padding: 36px 16px 24px;
+    gap: 20px;
+  }
+
+  .footer-brand p {
+    font-size: 0.82rem;
+  }
+
+  .footer-links-col h4,
+  .footer-contact-col h4 {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .footer-links-col a,
+  .footer-contact-item a,
+  .footer-contact-item p {
+    font-size: 0.8rem;
+  }
+
+  .footer-links-col ul {
+    gap: 8px;
+  }
+
+  .footer-contact-col {
+    gap: 10px;
+  }
+
+  .footer-bottom {
+    padding: 14px 16px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.72rem;
+  }
+
+  .footer-logo-img {
+    height: 56px;
+    width: 56px;
+  }
+
+  /* ── 17. Logo in navbar ── */
+  .nav-logo-img {
+    height: 38px;
+    width: 38px;
+  }
+
+  /* ── 18. Disciplines strip ── */
+  .disciplines-strip {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .discipline-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+    border-radius: 12px;
+  }
+
+  .discipline-item span {
+    font-size: 0.68rem;
+  }
+
+  .discipline-plus {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  /* ── 19. Back to top button ── */
+  .back-to-top {
+    bottom: 90px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+    font-size: 0.78rem;
+  }
+
+  /* ── 20. Floating WhatsApp ── */
+  .whatsapp-float {
+    bottom: 18px;
+    right: 18px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  /* ── 21. Dark section padding ── */
+  .dark-section {
+    padding: 40px 0;
+  }
+
+  /* ── 22. Map height ── */
+  .map-wrapper {
+    height: 240px;
+  }
+
+  /* ── 23. Contact form ── */
+  .contact-form-wrapper {
+    padding: 24px 18px;
+  }
+
+  .contact-form-wrapper h3 {
+    font-size: 1.2rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 11px 13px;
+    font-size: 0.85rem;
+  }
+
+  .form-group label {
+    font-size: 0.72rem;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  /* ── 24. Contact info cards ── */
+  .contact-info-card {
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .contact-info-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+  }
+
+  .contact-info-text h4 {
+    font-size: 0.9rem;
+  }
+
+  .contact-info-text p,
+  .contact-info-text a {
+    font-size: 0.8rem;
+  }
+
+  /* ── 25. Social cards ── */
+  .social-card {
+    padding: 14px 18px;
+  }
+
+  .social-card i {
+    font-size: 1.3rem;
+  }
+
+  .social-card .social-handle {
+    font-size: 0.82rem;
+  }
+
+  /* ── 26. FAQ items ── */
+  .faq-question {
+    padding: 18px 20px;
+  }
+
+  .faq-question-text {
+    font-size: 0.9rem;
+  }
+
+  .faq-answer {
+    padding: 0 20px;
+  }
+
+  .faq-answer p {
+    font-size: 0.82rem;
+    padding-bottom: 18px;
+    padding-top: 12px;
+  }
+
+  /* ── 27. Community photo grid ── */
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── 28. Schedule cards ── */
+  [style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── 29. Belt progression rows ── */
+  .feature-card [style*="margin-left: auto"] {
+    display: none;
+  }
+
+  /* ── 30. Form row — side by side to stacked ── */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+}
+
+/* ── Small phones (≤420px) additional tightening ── */
+@media (max-width: 420px) {
+  .section {
+    padding: 32px 0;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .feature-card {
+    padding: 16px 14px;
+  }
+
+  .pricing-card {
+    padding: 20px 14px;
+  }
+}
+

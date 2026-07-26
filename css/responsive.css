@@ -226,3 +226,58 @@
     display: none;
   }
 }
+/* ---------- MOBILE FIXES ---------- */
+@media (max-width: 600px) {
+
+  /* Fix 1 — Logo in navbar */
+  .nav-logo-img {
+    height: 38px;
+    width: 38px;
+  }
+
+  /* Fix 2 — Hero badge wrapping */
+  .hero-badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 5px 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90vw;
+  }
+
+  /* Fix 3 — Disciplines strip in one row */
+  .disciplines-strip {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .discipline-item span {
+    font-size: 0.7rem;
+  }
+
+  .discipline-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.2rem;
+  }
+
+  .discipline-plus {
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+  }
+
+  /* Fix 4 — Back to top not overlapping */
+  .back-to-top {
+    bottom: 90px;
+    right: 16px;
+  }
+
+  /* Fix 5 — Navbar logo text not overflowing */
+  .nav-logo {
+    max-width: 70%;
+    overflow: hidden;
+  }
+}
