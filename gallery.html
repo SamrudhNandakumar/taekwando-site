@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | ACE Martial Arts & Wellness</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/mobile-fixes.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.jpeg" alt="ACE Martial Arts & Wellness" class="nav-logo-img" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="classes.html" class="nav-link">Classes</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="https://wa.me/919731906675" target="_blank" class="nav-cta">Join Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <span class="section-tag light">Our Gallery</span>
+      <h1 class="page-header-title">Moments <span class="highlight">On The Mat</span></h1>
+      <p class="page-header-subtitle">Training, grading days and everything in between — a look inside ACE.</p>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY GRID (Bento) ========== -->
+  <section id="gallery" class="gallery-section section">
+    <div class="container">
+      <div class="gallery-grid" id="galleryGrid">
+
+       <button class="gallery-item gallery-item--big" data-index="0">
+          <img src="images/gallery-01.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+       </button>
+        <button class="gallery-item gallery-item--sm" data-index="1">
+          <img src="images/gallery-02.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+        <button class="gallery-item gallery-item--sm" data-index="2">
+          <img src="images/gallery-03.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+        <button class="gallery-item gallery-item--wide" data-index="3">
+          <img src="images/gallery-04.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+        <button class="gallery-item gallery-item--tall" data-index="4">
+          <img src="images/gallery-05.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+        <button class="gallery-item gallery-item--sm" data-index="5">
+          <img src="images/gallery-06.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+        <button class="gallery-item gallery-item--wide" data-index="6">
+          <img src="images/gallery-07.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+        <button class="gallery-item gallery-item--sm" data-index="7">
+          <img src="images/gallery-08.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+        <button class="gallery-item gallery-item--tall" data-index="8">
+          <img src="images/gallery-09.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+        <button class="gallery-item gallery-item--big" data-index="9">
+          <img src="images/gallery-10.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+        <button class="gallery-item gallery-item--wide" data-index="10">
+          <img src="images/gallery-11.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+        <button class="gallery-item gallery-item--tall" data-index="11">
+          <img src="images/gallery-12.jpg" alt="Taekwondo training at ACE" class="gallery-item-img" />
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CALL TO ACTION SECTION ========== -->
+  <section id="cta" class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="cta-content">
+      <span class="section-tag light">Get Started Today</span>
+      <h2>Ready to Begin Your Journey?</h2>
+      <p>Book a free trial class today and experience ACE Martial Arts &amp; Wellness for yourself.<br />No experience needed — just bring your dedication.</p>
+      <a href="https://wa.me/919731906675" target="_blank" class="btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i>&nbsp; Book via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+      <i class="fas fa-xmark"></i>
+    </button>
+    <div class="lightbox-content" id="lightboxContent">
+      <span class="lightbox-icon"><i class="fas fa-khanda"></i></span>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.jpeg" alt="ACE Martial Arts & Wellness" class="footer-logo-img" />
+        </a>
+        <p>Discipline. Strength. Balance.<br />Building champions on and off the mat.</p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/acemartialarts.blr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/919731906675" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="classes.html">Taekwondo</a></li>
+          <li><a href="classes.html">Self Defense</a></li>
+          <li><a href="classes.html">Wellness Training</a></li>
+          <li><a href="classes.html">Kids Batch</a></li>
+          <li><a href="classes.html">Adults Batch</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <i class="fab fa-instagram"></i>
+          <a href="https://instagram.com/acemartialarts.blr" target="_blank">@acemartialarts.blr</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/919731906675" target="_blank">+91 97319 06675</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-location-dot"></i>
+          <p>Near Abbigere Lakeside,<br />Banglore</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ACE Martial Arts &amp; Wellness. All rights reserved.</p>
+      <p>Built with &hearts; for champions</p>
+    </div>
+  </footer>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

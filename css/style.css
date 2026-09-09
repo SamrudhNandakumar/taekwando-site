@@ -219,9 +219,9 @@ ul { list-style: none; }
 
 /* Logo image — navbar */
 .nav-logo-img {
-  height: 52px;
+  height: 70px;
   width: auto;
-  border-radius: 50%;
+  border-radius: 90%;
   object-fit: cover;
   mix-blend-mode: screen;
   border: 2px solid rgba(220,30,30,0.5);
